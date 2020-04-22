@@ -23,11 +23,12 @@ class CAGSMaskIoU(tf.metrics.Mean):
         iou = tf.where(union == 0, 1., intersection / union)
         return super().update_state(iou, sample_weight)
 
+
 if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("predictions", type=str, help="Path to predicted output.")
-    parser.add_argument("dataset", type=str, help="Which dataset to evaluate ('dev', 'test').")
+    parser.add_argument("--predictions", default='cags_segmentation.txt', type=str, help="Path to predicted output.")
+    parser.add_argument("--dataset", default='test', type=str, help="Which dataset to evaluate ('dev', 'test').")
     parser.add_argument("--seed", default=42, type=int, help="Random seed.")
     parser.add_argument("--threads", default=1, type=int, help="Maximum number of threads to use.")
     parser.add_argument("--verbose", default=False, action="store_true", help="Verbose TF logging.")
