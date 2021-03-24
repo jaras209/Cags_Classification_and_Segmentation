@@ -5,7 +5,7 @@ Task from [Deep Learning – Summer 2019/20](https://ufal.mff.cuni.cz/courses/np
 ## cags_classification
 The goal of this assignment is to use pretrained `EfficientNet-B0` model to achieve best accuracy in CAGS classification.
 
-The CAGS dataset consists of images of cats and dogs of size 224×224224×224, each classified in one of the 34 breeds 
+The [CAGS dataset](https://ufal.mff.cuni.cz/~straka/courses/npfl114/1920/demos/cags_train.html) consists of images of cats and dogs of size 224×224, each classified in one of the 34 breeds 
 and each containing a mask indicating the presence of the animal. To load the dataset, use the [cags_dataset.py](https://github.com/jaras209/Cags_segmentation/blob/master/cags_segmentation.py) module. 
 The dataset is stored in a [TFRecord](https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset) 
 file and each element is encoded as a [tf.train.Example](https://www.tensorflow.org/api_docs/python/tf/train/Example). Therefore the dataset is 
